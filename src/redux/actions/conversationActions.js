@@ -7,7 +7,7 @@ const token = localStorage.getItem("authToken")
 export const getConv = (info) => async (dispatch) => {
     dispatch({ type: GET_CONV_BY_ID_REQUEST });
     try {
-      const res = await axios.post(`http://seniors-app.herokuapp.com/api/conversation/`+info,{
+      const res = await axios.post(`https://seniors-app.herokuapp.com/api/conversation/`+info,{
         headers: {
             "authToken":token
         }

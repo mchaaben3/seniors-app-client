@@ -7,7 +7,7 @@ export const addArticle = (info) => async dispatch => {
      
     })
     try{
-        const res = await axios.post(`http://seniors-app.herokuapp.com/api/health/`,info)
+        const res = await axios.post(`https://seniors-app.herokuapp.com/api/health/`,info)
         dispatch( {
             type: CREATE_ARTICLES_SUCCESS,
             payload: res.data
@@ -28,7 +28,7 @@ export const GET_ALL_ARTICLES = () => async dispatch => {
      
     })
     try{
-        const res = await axios.get(`http://seniors-app.herokuapp.com/api/health/`)
+        const res = await axios.get(`https://seniors-app.herokuapp.com/api/health/`)
         dispatch( {
             type: GET_ARTICLES_SUCCESS,
             payload: res.data

@@ -6,7 +6,7 @@ const token = localStorage.getItem('authToken')
 export const getSpecificBlackListMember = (info)=>async (dispatch) => {
     dispatch({type:GET_SPECIFIC_BLACKLIST_MEMBERS_REQUEST})
     try {
-        const res = await axios.get('http://seniors-app.herokuapp.com/api/blacklist/specific/user',{
+        const res = await axios.get('https://seniors-app.herokuapp.com/api/blacklist/specific/user',{
             headers: {
                 "authToken":token
             } 

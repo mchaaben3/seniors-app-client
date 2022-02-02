@@ -4,7 +4,7 @@ import { GET_USERS, USERS_ERROR, GET_USER, USER_ERROR, UPDATE_USER_REQUEST, UPDA
 export const getUsers = () => async dispatch => {
     
     try{
-        const res = await axios.get(`http://seniors-app.herokuapp.com/api/users/all/all`)
+        const res = await axios.get(`https://seniors-app.herokuapp.com/api/users/all/all`)
         dispatch( {
             type: GET_USERS,
             payload: res.data
@@ -21,7 +21,7 @@ export const getUsers = () => async dispatch => {
 
 export const getotherUser = (info) => async dispatch => {
     try{
-        const res = await axios.get(`http://seniors-app.herokuapp.com/api/users/user/`+info)
+        const res = await axios.get(`https://seniors-app.herokuapp.com/api/users/user/`+info)
         dispatch( {
             type: GET_USER,
             payload: res.data
@@ -41,7 +41,7 @@ export const getotherUser = (info) => async dispatch => {
 export const updateUser = (info) => async dispatch => {
     dispatch({type:UPDATE_USER_REQUEST})
     try {
-        const res = await axios.put(`http://seniors-app.herokuapp.com/api/users/`, info)
+        const res = await axios.put(`https://seniors-app.herokuapp.com/api/users/`, info)
         dispatch( {
             type: UPDATE_USER_SUCCESS,
             payload: res.data

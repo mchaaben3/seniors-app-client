@@ -14,7 +14,7 @@ const Posts = () => {
     axios
       .get(
         `
-        http://seniors-app.herokuapp.com/api/timeline`
+        https://seniors-app.herokuapp.com/api/timeline`
       )
       .then((res) => {
         setPosts(res.data);

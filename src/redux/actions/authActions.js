@@ -17,7 +17,7 @@ export const login = (info) => async (dispatch) => {
   dispatch({ type: LOGIN_REQUEST });
 
   try {
-    const res = await axios.post(`http://seniors-app.herokuapp.com/api/user/login`, info);
+    const res = await axios.post(`https://seniors-app.herokuapp.com/api/user/login`, info);
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data,
@@ -34,7 +34,7 @@ export const updateUserStatus = (info,b) => async (dispatch)=> {
   dispatch({ type: UPDATE_STATUS_REQUEST });
 
   try {
-    const res = await axios.put(`http://seniors-app.herokuapp.com/api/users/updatestatus/`+info, {b:b});
+    const res = await axios.put(`https://seniors-app.herokuapp.com/api/users/updatestatus/`+info, {b:b});
     dispatch({
       type: UPDATE_STATUS_SUCCESS,
       payload: res.data,
@@ -52,7 +52,7 @@ export const signup = (info) => async (dispatch) => {
 
   try {
     const res = await axios.post(
-      "http://seniors-app.herokuapp.com/api/user/register",
+      "https://seniors-app.herokuapp.com/api/user/register",
       info
     );
     dispatch({
@@ -71,7 +71,7 @@ export const getProfile = () => async (dispatch) => {
   dispatch({ type: GET_PROFILE_REQUEST });
 
   try {
-    const res = await axios.post(`http://seniors-app.herokuapp.com/api/user/login`);
+    const res = await axios.post(`https://seniors-app.herokuapp.com/api/user/login`);
     console.log({ res });
     dispatch({
       type: LOGIN_SUCCESS,

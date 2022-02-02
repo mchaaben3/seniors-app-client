@@ -6,7 +6,7 @@ const token = localStorage.getItem("authToken")
 export const groupAction = () => async dispatch => {
     
     try{
-        const res = await axios.get(`http://seniors-app.herokuapp.com/api/group/`,{
+        const res = await axios.get(`https://seniors-app.herokuapp.com/api/group/`,{
             headers: {
                 "authToken":token
             }
@@ -29,7 +29,7 @@ export const groupAction = () => async dispatch => {
 export const createGroup = (info) => async (dispatch) => {
     dispatch({type:CREATE_GROUP_REQUEST})
     try{
-        const res = await axios.post(`http://seniors-app.herokuapp.com/api/group/`,info,{
+        const res = await axios.post(`https://seniors-app.herokuapp.com/api/group/`,info,{
             headers: {
                 "authToken":token
             }
@@ -52,7 +52,7 @@ export const createGroup = (info) => async (dispatch) => {
 export const joinGroup = (info)=>async (dispatch) => {
     dispatch({type:JOIN_GROUP_REQUEST})
     try {
-        const res = await axios.put('http://seniors-app.herokuapp.com/api/group/join/'+info)
+        const res = await axios.put('https://seniors-app.herokuapp.com/api/group/join/'+info)
         dispatch( {
             type: JOIN_GROUP_SUCCESS,
             payload: res.data
@@ -69,7 +69,7 @@ export const joinGroup = (info)=>async (dispatch) => {
 export const leaveGroup = (info)=>async (dispatch) => {
     dispatch({type:LEAVE_GROUP_REQUEST})
     try {
-        const res = await axios.put('http://seniors-app.herokuapp.com/api/group/leave/'+info)
+        const res = await axios.put('https://seniors-app.herokuapp.com/api/group/leave/'+info)
         dispatch( {
             type: LEAVE_GROUP_SUCCESS,
             payload: res.data
@@ -87,7 +87,7 @@ export const leaveGroup = (info)=>async (dispatch) => {
 export const getAllGroupMembers = (info)=>async (dispatch) => {
     dispatch({type:GET_ALL_MEMBERS_GROUP_REQUEST})
     try {
-        const res = await axios.get('http://seniors-app.herokuapp.com/api/group/members/'+info,{
+        const res = await axios.get('https://seniors-app.herokuapp.com/api/group/members/'+info,{
             headers: {
                 "authToken":token
             } 
@@ -108,7 +108,7 @@ export const getAllGroupMembers = (info)=>async (dispatch) => {
 export const DELETE_GROUP = (info)=>async (dispatch) => {
     dispatch({type:DELETE_GROUP_REQUEST})
     try {
-        const res = await axios.delete('http://seniors-app.herokuapp.com/api/group/'+info,{
+        const res = await axios.delete('https://seniors-app.herokuapp.com/api/group/'+info,{
             headers: {
                 "authToken":token
             } 
@@ -128,7 +128,7 @@ export const DELETE_GROUP = (info)=>async (dispatch) => {
 export const DELETE_MEMBER = (info) => async (dispatch)=>{
     dispatch({type:DELETE_MEMBER_GROUP_REQUEST})
     try {
-        // const res = await axios.delete('http://seniors-app.herokuapp.com/api/group/'+info,{
+        // const res = await axios.delete('https://seniors-app.herokuapp.com/api/group/'+info,{
         //     headers: {
         //         "authToken":token
         //     } 
@@ -150,7 +150,7 @@ export const DELETE_MEMBER = (info) => async (dispatch)=>{
 export const SEND_MESSAGE = (id,message,userId) => async (dispatch)=>{
     dispatch({type:SEND_MESSAGE_GROUP_REQUEST})
     try {
-        const res = await axios.put('http://seniors-app.herokuapp.com/api/group/messenger/'+id,{
+        const res = await axios.put('https://seniors-app.herokuapp.com/api/group/messenger/'+id,{
             message: message,userId:userId })
         dispatch( {
             type: SEND_MESSAGE_GROUP_SUCCESS,
@@ -168,7 +168,7 @@ export const SEND_MESSAGE = (id,message,userId) => async (dispatch)=>{
 export const GET_MESSAGES = (id) => async (dispatch)=>{
     dispatch({type:GET_MESSAGE_GROUP_REQUEST})
     try {
-        const res = await axios.get('http://seniors-app.herokuapp.com/api/group/messages/'+id)
+        const res = await axios.get('https://seniors-app.herokuapp.com/api/group/messages/'+id)
         dispatch( {
             type: GET_MESSAGE_GROUP_SUCCESS,
             payload: res.data.messageOfGroup

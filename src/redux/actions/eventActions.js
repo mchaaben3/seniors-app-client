@@ -24,7 +24,7 @@ const token = localStorage.getItem("authToken");
 export const createEvent = (info) => async (dispatch) => {
   dispatch({ type: CREATE_EVENT_REQUEST });
   try {
-    const res = await axios.post(`http://seniors-app.herokuapp.com/api/event/`, info, {
+    const res = await axios.post(`https://seniors-app.herokuapp.com/api/event/`, info, {
       headers: {
         authToken: token,
       },
@@ -45,7 +45,7 @@ export const createEvent = (info) => async (dispatch) => {
 export const getAllEvent = ()=>async (dispatch) => {
     dispatch({type:GET_ALL_EVENTS_REQUEST})
     try {
-        const res = await axios.get('http://seniors-app.herokuapp.com/api/event/all/all',{
+        const res = await axios.get('https://seniors-app.herokuapp.com/api/event/all/all',{
             headers: {
                 "authToken":token
             } 
@@ -66,7 +66,7 @@ export const getAllEvent = ()=>async (dispatch) => {
 export const participateToEvent = (info,userConnected)=>async (dispatch) => {
   dispatch({type:PARTICIPATE_EVENT_REQUEST})
   try {
-      const res = await axios.put('http://seniors-app.herokuapp.com/api/event/join/'+info, {userConnected:userConnected
+      const res = await axios.put('https://seniors-app.herokuapp.com/api/event/join/'+info, {userConnected:userConnected
     })
       dispatch( {
           type: PARTICIPATE_EVENT_SUCCESS,
@@ -85,7 +85,7 @@ export const participateToEvent = (info,userConnected)=>async (dispatch) => {
 export const leaveEvent = (info,userConnected)=>async (dispatch) => {
   dispatch({type:LEAVE_EVENT_REQUEST})
   try {
-      const res = await axios.put('http://seniors-app.herokuapp.com/api/event/leave/'+info, {userConnected:userConnected
+      const res = await axios.put('https://seniors-app.herokuapp.com/api/event/leave/'+info, {userConnected:userConnected
     })
       dispatch( {
           type: LEAVE_EVENT_SUCCESS,
@@ -103,7 +103,7 @@ export const leaveEvent = (info,userConnected)=>async (dispatch) => {
 export const deleteEvent = (info)=>async (dispatch) => {
   dispatch({type:DELETE_EVENT_REQUEST})
   try {
-      const res = await axios.delete('http://seniors-app.herokuapp.com/api/event/'+info,{
+      const res = await axios.delete('https://seniors-app.herokuapp.com/api/event/'+info,{
           headers: {
               "authToken":token
           } 

@@ -35,13 +35,13 @@ export const getPosts = (info) => async (dispatch) => {
   dispatch({ type: GET_ALL_POSTS_REQUEST });
   try {
     if(info) {
-      const res = await axios.get(`http://seniors-app.herokuapp.com/api/posts/user/`+info);
+      const res = await axios.get(`https://seniors-app.herokuapp.com/api/posts/user/`+info);
       dispatch({
         type: GET_ALL_POSTS_SUCCESS,
         payload: res.data,
       });
   }else {
-    const res = await axios.get(`http://seniors-app.herokuapp.com/api/timeline/`);
+    const res = await axios.get(`https://seniors-app.herokuapp.com/api/timeline/`);
     dispatch({
       type: GET_ALL_POSTS_SUCCESS,
       payload: res.data,
@@ -59,7 +59,7 @@ export const createPostAction = (info) => async (dispatch) => {
   dispatch({ type: CREATE_POST_REQUEST });
 
   try {
-    const res = await axios.post(`http://seniors-app.herokuapp.com/api/posts/`, info);
+    const res = await axios.post(`https://seniors-app.herokuapp.com/api/posts/`, info);
     dispatch({
       type: CREATE_POST_SUCCESS,
       payload: res.data,
@@ -76,7 +76,7 @@ export const createPostAction = (info) => async (dispatch) => {
 export const deletePostAction = (info) => async (dispatch)=> {
   dispatch({type:DELETE_POST_REQUEST})
   try {
-    const response = await axios.delete('http://seniors-app.herokuapp.com/api/posts/'+info,{
+    const response = await axios.delete('https://seniors-app.herokuapp.com/api/posts/'+info,{
   
       headers: {
           "authToken":token
@@ -97,7 +97,7 @@ export const deletePostAction = (info) => async (dispatch)=> {
 export const getPostsByUserId = (info) => async (dispatch)=> {
   dispatch({type:GET_POST_BY_USER_REQUEST})
   try {
-    const response = await axios.get('http://seniors-app.herokuapp.com/api/timeline/'+info)
+    const response = await axios.get('https://seniors-app.herokuapp.com/api/timeline/'+info)
     dispatch({
       type:GET_POST_BY_USER_SUCCESS,
       payload:response.data
@@ -115,7 +115,7 @@ export const getPostsByUserId = (info) => async (dispatch)=> {
 export const likePost = (info) => async (dispatch)=> {
   dispatch({type:LIKE_POST_REQUEST})
   try {
-    const response = await axios.put('http://seniors-app.herokuapp.com/api/posts/'+info+'/like')
+    const response = await axios.put('https://seniors-app.herokuapp.com/api/posts/'+info+'/like')
     dispatch({
       type:LIKE_POST_SUCCESS,
       payload:response.data
@@ -132,7 +132,7 @@ export const likePost = (info) => async (dispatch)=> {
 export const unlikePost = (info) => async (dispatch)=> {
   dispatch({type:UNLIKE_POST_REQUEST})
   try {
-    const response = await axios.put('http://seniors-app.herokuapp.com/api/posts/'+info+'/unlike')
+    const response = await axios.put('https://seniors-app.herokuapp.com/api/posts/'+info+'/unlike')
     dispatch({
       type:UNLIKE_POST_SUCCESS,
       payload:response.data
@@ -150,7 +150,7 @@ export const unlikePost = (info) => async (dispatch)=> {
 export const getAllLikes = (info) => async (dispatch)=> {
   dispatch({type:GET_ALL_LIKES_REQUEST})
   try {
-    const response = await axios.get('http://seniors-app.herokuapp.com/api/posts/'+info+'/likes')
+    const response = await axios.get('https://seniors-app.herokuapp.com/api/posts/'+info+'/likes')
     dispatch({
       type:GET_ALL_LIKES_SUCCESS,
       payload:response.data
@@ -168,7 +168,7 @@ export const getAllLikes = (info) => async (dispatch)=> {
 export const post_comment = (id,comment) => async (dispatch)=> {
   dispatch({type:POST_COMMENT_REQUEST})
   try {
-    const response = await axios.put('http://seniors-app.herokuapp.com/api/posts/'+id+'/comment',{
+    const response = await axios.put('https://seniors-app.herokuapp.com/api/posts/'+id+'/comment',{
       comment: comment,
       headers: {
           "authToken":token
@@ -191,7 +191,7 @@ export const post_comment = (id,comment) => async (dispatch)=> {
 export const get_all_comments = (id) => async (dispatch)=> {
   dispatch({type:GET_ALL_COMMENT_REQUEST})
   try {
-    const response = await axios.get('http://seniors-app.herokuapp.com/api/posts/'+id+'/comments',{
+    const response = await axios.get('https://seniors-app.herokuapp.com/api/posts/'+id+'/comments',{
      
       headers: {
           "authToken":token
