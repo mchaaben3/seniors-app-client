@@ -11,7 +11,7 @@ const Users = ({ person }) => {
       const blockUser = async () => {
         try {
           const res = await axios.put(
-            `http://localhost:5050/api/admin/unblock/${id}`
+            `https://seniors-app.herokuapp.com/api/admin/unblock/${id}`
           );
 
           console.log(res);
@@ -24,7 +24,7 @@ const Users = ({ person }) => {
       const blockUser = async () => {
         try {
           const res = await axios.put(
-            `http://localhost:5050/api/admin/block/${id}`
+            `https://seniors-app.herokuapp.com/api/admin/block/${id}`
           );
 
           console.log(res);
@@ -41,7 +41,7 @@ const Users = ({ person }) => {
       const blockUser = async () => {
         try {
           const res = await axios.put(
-            `http://localhost:5050/api/admin/unblock/${id}`
+            `https://seniors-app.herokuapp.com/api/admin/unblock/${id}`
           );
 
           console.log(res);
@@ -54,7 +54,7 @@ const Users = ({ person }) => {
       const blockUser = async () => {
         try {
           const res = await axios.put(
-            `http://seniors-app.herokuapp.com/api/admin/block/${id}`
+            `https://seniors-app.herokuapp.com/api/admin/block/${id}`
           );
 
           console.log(res);

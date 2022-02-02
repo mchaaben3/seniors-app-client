@@ -17,7 +17,7 @@ const HomePage = ({ socket }) => {
         axios.defaults.headers.common["authToken"] =
           localStorage.getItem("authToken");
 
-        const res = await axios.get(`http://seniors-app.herokuapp.com/api/users/`);
+        const res = await axios.get(`https://seniors-app.herokuapp.com/api/users/`);
         setUser(res.data);
       } catch (error) {
         console.log(error);

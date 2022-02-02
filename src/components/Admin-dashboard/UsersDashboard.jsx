@@ -26,7 +26,7 @@ const dispatch = useDispatch()
   useEffect(() => {
     const getAllUsers = async () => {
       try {
-        const res = await axios.get(`http://seniors-app.herokuapp.com/api/users/all/all`);
+        const res = await axios.get(`https://seniors-app.herokuapp.com/api/users/all/all`);
 
         setPeople(res.data);
       } catch (error) {

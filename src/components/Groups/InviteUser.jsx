@@ -13,7 +13,7 @@ const InviteUser = ({ setShowModal }) => {
 
     const findUsers = () => {
       setLoading(true);
-      fetch(`http://seniors-app.herokuapp.com/api/users/ByName?keyword=${search}`)
+      fetch(`https://seniors-app.herokuapp.com/api/users/ByName?keyword=${search}`)
         .then((res) => res.json())
         .then((res) => {
           setUsers(res);

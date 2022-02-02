@@ -8,7 +8,7 @@ const SearchForFriend = () => {
   const [text, setText] = useState('')
 
   // const getData = async () => {
-  //   const res = await axios.get(`http://seniors-app.herokuapp.com/api/users/all`)
+  //   const res = await axios.get(`https://seniors-app.herokuapp.com/api/users/all`)
   //     var hintArray = []
   //      res.data.map(a => hintArray.push(a.full_name))
   //       setHintData(hintArray)

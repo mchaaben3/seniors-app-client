@@ -31,7 +31,7 @@ const MessengerOfGroup = ({ id, userId }) => {
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const res = await axios.get('http://seniors-app.herokuapp.com/api/group/messages/'+id)
+        const res = await axios.get('https://seniors-app.herokuapp.com/api/group/messages/'+id)
         setMessages(res.data.messageOfGroup)
       } catch (err) {
         console.log(err);

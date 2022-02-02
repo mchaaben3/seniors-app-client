@@ -21,7 +21,7 @@ const Profile = () => {
       useEffect(() => {
         const fetchUser = async () => {
           try{
-          const res = await axios.get(`http://seniors-app.herokuapp.com/api/users/`+id);
+          const res = await axios.get(`https://seniors-app.herokuapp.com/api/users/`+id);
           setUser(res.data);
         }catch(error){
           console.log(error)
