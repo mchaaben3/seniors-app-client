@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  
+.user-avatar{
+  @apply border-white border-white border-solid border-8;
+  border-radius: 3px 25px 0;
+  box-shadow: 0 1px 0 #e1e8ed;
+}
+.timeline-info {
+  @apply block w-full;
+  line-height: 59px;
+}
+.post-box {
+  @apply rounded-sm  inline-block mb-5 p-6 w-full;
+  border-color: rgba(237, 233, 233, 1);
+}
+.attachement{
+  @apply bg-white border-solid border-t-0 border-r border-b border-l block p-2 text-right;
+  border-width: 1px;
+  border-color: rgba(238, 238, 238, 1);
+}
+.fileContainer {
+  @apply my-0 mr-0 ml-1 relative capitalize;
+  color: rgba(216, 216, 216, 1);
+  font-size: 11px;
+}
+  
+
+.menu-nav-bar {
+  @apply px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-gray-200 ;
+}
+
+.setting-profile-form {
+  @apply box-border grid my-0 mx-auto p-4 relative;
+  width: 540px;
+  height: 100px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 10em 1em 1em 1em;
+}

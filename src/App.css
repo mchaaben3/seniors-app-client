@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300&display=swap');
+.svg-icon {
+  width: 1.8em;
+  height: 1.8em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #4691f6;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
+body {
+  /* background: linear-gradient(to right, rgba(204, 173, 173, 0.418), rgba(114, 114, 114, 0.424),rgb(241, 241, 241) 65%); */
+  margin: 0;
+  font-family: 'Mohave', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.buttonColor {
+  background-color: #A49393;
+}
+
+.buttonColor:hover {
+  background-color:#67595E;
+}
+.joinGroup {
+  background-color: #055328;
+  background-image: linear-gradient(315deg, #1b8b4a 0%, #09945a 74%);
+  box-shadow: 0 0 0 0 #1b8b4a, 0.2rem 0.2rem 30px #09945a;
+
+}
+.joinGroup:hover {
+  box-shadow:  0 0 0 0 #1b8b4a, 0.2rem 0.2rem 60px #09945a;
+  }
+
+  .unJoinGroup {
+    background-color: #cb1717;
+    background-image: linear-gradient(315deg, #cb1717 0%, #fa3a3a 74%);
+    box-shadow: 0 0 0 0 #ec008c, 0.2rem 0.2rem 30px #cb1717;
+  }
+  .unJoinGroup:hover {
+    box-shadow: 0 0 0 0 #ec0000, 0.2rem 0.2rem 60px #cb1717;
+    }
+/* .coversocialnetwork {
+  background-image: url("https://www.waldenu.edu/-/media/walden/images/seo-article/seo-492-bs-laughing-seniors-in-cafe-40391824-1200x675.jpg?hash=81FC0FB404933A9C47527690092B6877");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+} */
+
+.topmenu {
+  z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 2px;
+}
+::-webkit-scrollbar-button {
+  width: 5px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d3748;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2b6cb0;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #1a202c;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.aside-bar {
+  width: 300px;
+  height: 332px;
+  background: #EED6D3;
+  padding-left: 6px;
+  padding-top: 4px;
+  border-radius: 40px 0 40px 0;
+
+}
+
+.posts {
+  width: 540px;
+height: auto;
+}
+
+.create-post {
+  width: 540px;
+  height: 93px;
+
+  
+  background: #FFFFFF;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  
+}
+
+.events-container {
+  background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/The_Event_2010_Intertitle.svg/1200px-The_Event_2010_Intertitle.svg.png');
+   background-position: center; 
+   background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+
+
+  /* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+  .posts{
+    width: 90%;
+    
+  }
+nav > .container > ul > li > a > i:hover {
+  color: rgb(85, 78, 78);
+  
+  height: 110%;
+}
+  .fa {
+    font-size: 24px;
+  }
+  .w-96{
+    width: 30rem;
+  }
+  .timeline-info {
+    background: #fff none repeat scroll 0 0;
+    display: block;
+    line-height: 59px;
+    width: 100%;
+  }
+.timeline-info > ul > li {
+  display: inline-block;
+
+  position: absolute;
+
+}
+.timeline-info .admin-name > h5 {
+  color: #088dcd;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 0;
+  vertical-align: super;
+}
+
+
+/* .coversocialnetwork {
+  background-image: url("https://www.waldenu.edu/-/media/walden/images/seo-article/seo-492-bs-laughing-seniors-in-cafe-40391824-1200x675.jpg?hash=81FC0FB404933A9C47527690092B6877");
+  background-repeat: no-repeat;
+  background-size: cover;
+position:absolute;
+  width: 100vw;
+  height: 100%;
+} */
+.centerd{
+  top: 20%;
+  left: 50%;
+}
+.app__container {
+  
+	width: auto;
+	height:auto;
+
+}
+
+.app__input {
+	margin-top: 10px;
+  border: 1px solid gray;
+  background-color: gray;
+  text-align: center;
+  color:honeydew;
+  font-size: 24px;
+}
+
+
+.fileContainer {
+  cursor: pointer;
+  display: block;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  position: absolute;
+  right: -10px;
+  text-align: right;
+  top: -17px;
+  width: 100%;
+  overflow: hidden;
+  color: #d8d8d8;
+     margin: 0 0 0 0px ;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.edit-photo {
+  background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+  bottom: 100px;
+  color: #fff;
+  left: 275px;
+  padding: 5px 5px;
+  position: absolute;
+  z-index: 9;
+  border-radius: 3px;
+  border: 1px solid transparent;
+}
+
+
+/* heart clicked style */
+
+
+.heart {
+  color:red;
+}
+
+.fa-beat {
+  animation:fa-beat 5s ease 1;
+}
+@keyframes fa-beat {
+  0% {
+    transform:scale(1);
+  }
+  5% {
+    transform:scale(1.25);
+  }
+  20% {
+    transform:scale(1);
+  }
+
+}
+/*heart clicked end */
+
+
+
+/*==================================================
+  Scroll Down Arrow
+  ==================================================*/
+
+  .arrows {
+    width: 80px;
+    height: 72px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom:0;
+  }
+  
+  .arrows path {
+    stroke: #a200ff;
+    fill: transparent;
+    stroke-width: 5px;
+    animation: arrow 1s infinite;
+    -webkit-animation: arrow 2s infinite;
+  }
+  
+  @keyframes arrow
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  @-webkit-keyframes arrow /*Safari and Chrome*/
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  .arrows path.a1 {
+    animation-delay:-1s;
+    -webkit-animation-delay:-1s;
+  }
+  
+  .arrows path.a2 {
+    animation-delay:-0.5s;
+    -webkit-animation-delay:-0.5s;
+  }
+  
+  .arrows path.a3 {
+    animation-delay:0s;
+    -webkit-animation-delay:0s;
+  }
+  
+  /*==================================================
+  Features Section
+  ==================================================*/
+
+#features{
+	background: url("../src/img/banner.jpg")fixed no-repeat;
+  background-position: center;
+	background-size: cover;
+	width: 100%;
+	min-height: 850px;
+
+
+	text-align: center;
+
+}
+
+ .feature-item {
+  background: linear-gradient(to bottom, rgba(51, 177, 156, 0.8), rgba(9, 180, 253, 0.8) 65%);
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 55px;
+  margin: auto;
+  cursor: pointer;
+  color: #fff;
+  line-height: 240px;
+  font-size: 50px;
+}
+
+.feature-item:hover{
+  background: #067aee;
+  transition: all 1s;
+}
+
+h3{
+  font-family: 'Agency FB', sans-serif;
+  color: #939598;
+  font-size: 35px;
+}
+.just-for-seniors-title {
+	font-family: 'Agency FB', sans-serif;
+	font-size: 215px;
+  margin-top:150px
+}
+.reg-ex {
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	top: 0;
+
+
+}
+
+#banner {
+  background: url("../src/img/landing.jpg")fixed no-repeat;
+  background-position: center;
+	background-size: cover;
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	top: 0;
+
+}
+.signin-form {
+  background: linear-gradient(to bottom, rgba(43,57,144,.8), rgba(39,170,225,1) 65%);
+  position: absolute;
+  margin-top:52px;
+  width: 340px;
+  min-height: 600px;
+  top: 0;
+  border-radius: 50px;
+  padding: 40px 30px;
+  text-align: center;
+  color: #fff;
+  z-index: 1000;
+}
+.signup-form {
+  background: linear-gradient(to bottom, rgba(43,57,144,.8), rgba(39,170,225,1) 65%);
+  position: absolute;
+  margin-top:52px;
+  width: 340px;
+  height: auto;
+  top: 0;
+  border-radius: 50px;
+  padding: 40px 30px;
+  text-align: center;
+  color: #fff;
+  z-index: 1000;
+}
