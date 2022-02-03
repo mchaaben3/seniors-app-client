@@ -3,29 +3,33 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { signup } from "../../redux/actions/authActions";
+import PasswordStrengthBar from 'react-password-strength-bar';
 
 const PasswordDetails = ({ prevStep, handleChange, nextStep, values }) => {
   
   const [information, setInformation] = useState(values);
   const signupSelector = useSelector((state) => state.signup);
   const navigate = useNavigate();
-  console.log(information);
   useEffect(() => {
     if (signupSelector.isAuth) navigate("/");
   }, [signupSelector.isAuth]);
 
+
+   console.log(information);
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (values.gender == "female") {
-    setInformation({...information,profilePicture:"https://res.cloudinary.com/dp81gikbd/image/upload/v1643798806/female_ffenti.png"})
-    } else {
-      setInformation({...information,profilePicture:"https://res.cloudinary.com/dp81gikbd/image/upload/v1643798807/male_er9asw.png"})
-    } 
-   
-   
+  
+    if (information.gender == "female") {
+      setInformation({...information,profilePicture:"https://res.cloudinary.com/dp81gikbd/image/upload/v1643798806/female_ffenti.png"})
+      dispatch(signup(information));
 
-    dispatch(signup(values));
+      } else {
+        setInformation({...information,profilePicture:"https://res.cloudinary.com/dp81gikbd/image/upload/v1643798807/male_er9asw.png"})
+        dispatch(signup(information));
+
+      } 
+
   };
   const back = (e) => {
     e.preventDefault();
@@ -41,8 +45,8 @@ const PasswordDetails = ({ prevStep, handleChange, nextStep, values }) => {
           className="w-full text-lg text-gray-900 p-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
           name="password"
           type="password"
-          value={values.password}
-          onChange={handleChange("password")}
+          value={information.password}
+          onChange={(e)=>setInformation({...information,password:e.target.value})}
           placeholder="Password"
         />
         <div className="text-xl font-bold text-gray-100 tracking-wide mt-8">
@@ -51,18 +55,17 @@ const PasswordDetails = ({ prevStep, handleChange, nextStep, values }) => {
         <input
           className="w-full text-lg text-gray-900 p-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
           type="password"
-          value={values.re_password}
-          onChange={handleChange("re_password")}
+       
           placeholder="Re your password"
         />
         <div className="text-xl font-bold text-gray-100 tracking-wide mt-8">
-          GENDER
+          E_MAIL
         </div>
         <input
           className="w-full text-lg text-gray-900 p-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
           type="email"
-          value={values.e_mail}
-          onChange={handleChange("e_mail")}
+          value={information.e_mail}
+          onChange={(e)=>setInformation({...information,e_mail:e.target.value})}
           placeholder="example@gmail.com"
         />
         <div class="my-10 flex flex-row">

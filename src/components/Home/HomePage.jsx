@@ -56,7 +56,7 @@ const HomePage = ({ socket }) => {
             <SideMenu userConnected={userConnected} />
   
       
-        <div className="flex  flex-col  lg:mx-auto mt-4  w-full  lg:w-1/2  lg:mt-2">
+        <div className="flex  flex-col  lg:mx-auto mt-2  w-full  lg:w-1/2  lg:mt-2 px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5">
           <PostsContainer userConnected={userConnected} socket={socket} />
         </div>
        

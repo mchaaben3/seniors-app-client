@@ -14,7 +14,7 @@ const GroupPage = () => {
   const { members } = all_member;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  console.log(members);
   useEffect(async () => {
     await dispatch(getAllGroupMembers(id));
   }, []);
@@ -33,39 +33,26 @@ const GroupPage = () => {
   return (
     <>
       {(members.group_members_id &&
-        members.group_members_id.find((e) => e._id === userConnected._id) === userConnected._id) &&  members.group_members_id.length > 0 ||
-      userConnected == userId  ? (
-        <section className=" mx-2 mt-28  lg:flex-row lg:flex lg:mx-10 justify-between ">
-          <div className="flex-row w-1/3 overflow-y-scroll messenger ">
-            <div className="p-2 ">
-              <div className="flex justify-between items-center p-3 hover:bg-gray-100 rounded-lg relative">
-                <div className="w-16 h-16 relative flex flex-shrink-0">
-                  <img
-                    className="shadow-md rounded-full w-full h-full object-cover"
-                    src={
-                      "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-group-512.png"
-                    }
-                    alt=""
-                  />
-                </div>
-                <div className="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
-                  <p>You</p>
-                </div>
-              </div>
-            </div>
-            {all_member.members.group_members_id
-              ? members.group_members_id.map((e,index) => (
-                  <ListOfGroupUsers
-                  key={index}
-                    nameOfgroupUser={e.full_name}
-                    picOfgroupUser={e.profilePicture}
-                  />
-                ))
-              : '"'}
+        members.group_members_id.find((e) => e._id === userConnected._id) ===
+          userConnected._id &&
+        members.group_members_id.length > 0) ||
+      userConnected == userId ? (
+        <div class="flex items-center justify-center min-h-screen bg-gray-200 py-8">
+          <div class="flex flex-col w-full max-w-full shadow bg-white p-4">
+            <ul class="flex flex-row space-x-3 overflow-x-auto py-4 px-2 mt-2">
+              {all_member.members.group_members_id
+                ? members.group_members_id.map((e, index) => (
+                    <ListOfGroupUsers
+                      key={index}
+                      nameOfgroupUser={e.full_name}
+                      picOfgroupUser={e.profilePicture}
+                    />
+                  ))
+                : '"'}
+            </ul>
+            <MessengerOfGroup id={id} userId={userConnected} />
           </div>
-
-          <MessengerOfGroup id={id} userId={userConnected} />
-        </section>
+        </div>
       ) : (
         <div className="lg:px-24 lg:py-24 md:py-20 md:px-44 px-4 py-24 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16">
           <div className="xl:pt-24 w-full xl:w-1/2 relative pb-12 lg:pb-0">

@@ -44,7 +44,7 @@ const GroupContainer = ({ userConnected }) => {
 
   return (
     <>
-      <div className="flex-none mt-24 ">
+      <div className="flex-none mt-24 px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5 w-1/3 mx-auto ">
         {isBlocked == true ? (
           <>
             <div class="relative mt-6 max-w-lg mx-auto">
@@ -66,7 +66,7 @@ const GroupContainer = ({ userConnected }) => {
 
               <input
                 onChange={handleFilter}
-                class="w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline"
+                className="w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Search"
               />
@@ -74,17 +74,17 @@ const GroupContainer = ({ userConnected }) => {
           </>
         ) : (
           <>
-            <div className="flex   justify-center ">
+            <div className="flex   justify-center  ">
               <button
                 onClick={() => setShowModal(true)}
-                className="p-0 h-14 w-14 rounded-full buttonColor active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none"
+                className="border border-gray-700 text-gray-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white bg-gray-800 focus:outline-none focus:shadow-outline"
               >
                 <i className="fa fa-plus text-white" />
               </button>
             </div>
             <br />
 
-            <div class="relative mt-6 max-w-lg mx-auto">
+            <div class="relative mt-6 max-w-lg mx-auto ">
               <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
                 <svg
                   class="h-5 w-5 text-gray-500"
@@ -111,13 +111,13 @@ const GroupContainer = ({ userConnected }) => {
           </>
         )}
       </div>
-      <div className="flex flex-col grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 w-full  mb-10">
+      <div className="flex flex-col grid md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 w-full  mb-10 px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5  mt-4">
         {loading ? (
           <BarLoader loading />
         ) : error ? (
           error.message
         ) : displayAllGroup.Allgroups.length === 0 ? (
-          <BarLoader loading />
+          <h1>There is No Groups Here</h1>
         ) : displayAllGroup.Allgroups.filter((obj) =>
             obj.group_name
               .toLowerCase()

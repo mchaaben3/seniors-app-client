@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 import {
-  getAllLikes,
-  getPosts,
-  get_all_comments,
+
   likePost,
   post_comment,
   unlikePost,

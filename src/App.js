@@ -63,7 +63,7 @@ function App() {
           path="/profile/:id"
           element={
             <PrivateRoute>
-              <Profile />
+              <Profile  socket={socket} />
             </PrivateRoute>
           }
         />

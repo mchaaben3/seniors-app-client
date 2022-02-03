@@ -12,6 +12,7 @@ export default class PersonalDetails extends Component {
   };
   render() {
     const { values, handleChange } = this.props;
+    console.log(values.profilePicture);
     return (
       <div className="signup-form">
         <div className="text-xl font-bold text-gray-100 tracking-wide">

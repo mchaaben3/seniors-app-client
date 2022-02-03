@@ -14,16 +14,17 @@ const SideMenu = ({ userConnected }) => {
   
   return (
     <>
-      <div className="flex flex-col min-h-screen shadow-lg-l border-black border-r  border-l-0 border-t-0  bg-white">
+      <div className="flex flex-col min-h-screen  bg-white shadow-xl ring-1 ring-gray-900/5">
         <div className="flex-shrink-0 px-2 bg-gray-900 py-1 flex flex-col items-center">
+        <Link  to={`/profile/${userConnected._id}`}>
           <img
             className="h-36 w-36 shadow-lg rounded-full bg-gray-900 "
             src={
               userConnected.profilePicture
               ? userConnected.profilePicture
-              :profilePic
+              : userConnected.gender ==="" ? "https://res.cloudinary.com/dp81gikbd/image/upload/v1643894684/anonyme_v2cws7.png":profilePic
             }
-          />
+          /></Link>
           <div className="pt-1 border-t mt-4 w-full text-center text-xl text-gray-100">
             {userConnected.full_name}
           </div>

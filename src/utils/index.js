@@ -26,3 +26,13 @@ export const isAdminTrue = ()=> {
 
 
 }
+
+export const idOfUserConnected = ()=>{
+  if (localStorage.getItem('authToken')) {
+
+    const token = localStorage.getItem("authToken");
+    const id = parseToken(token).userId;
+    return id;
+      }
+  
+}

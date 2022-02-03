@@ -10,6 +10,9 @@ import {
   faSignOutAlt,
   faLayerGroup,
   faUserShield,
+  faAddressBook,
+  faCalendar,
+  faHome,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { updateUserStatus } from "../../redux/actions/authActions";
@@ -21,10 +24,10 @@ import Notification from "./Notification/Notification";
 import { isAdminTrue, isLogin } from "../../utils";
 
 // const TopMenu = ({ socket }) => {
-  const TopMenu = () => {
+const TopMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [state, setstate] = useState(false);
-  
+
   const [notification, setNotification] = useState([]);
   const auth = isLogin();
   const isAdmin = isAdminTrue();
@@ -61,9 +64,8 @@ import { isAdminTrue, isLogin } from "../../utils";
     setstate(!state);
   };
 
-  return (
-
-      auth ? ( <nav className="topmenu bg-gray-900	 fixed  top-0 w-full mx-auto px-4 sm:px-6 lg:px-8  ">
+  return auth ? (
+    <nav className="topmenu bg-gray-900	 fixed  top-0 w-full mx-auto px-4 sm:px-6 lg:px-8  ">
       <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex items-center justify-end h-20">
           <div className="flex items-center">
@@ -95,21 +97,29 @@ import { isAdminTrue, isLogin } from "../../utils";
                     <span className="ml-4 text-gray-200">Health</span>
                   </span>{" "}
                 </Link>
-                {isAdmin ? (   
-                <Link to="/admin">
-                  <span className="menu-nav-bar hover:opacity-75 ">
-                    <FontAwesomeIcon icon={faUserShield} size="2x" />
-                    <span className="ml-4 text-gray-200">Admin Dashbord</span>
-                  </span>{" "}
-                </Link>):(   
-               <></>)}
-            {" "}
+                {isAdmin ? (
+                  <Link to="/admin">
+                    <span className="menu-nav-bar hover:opacity-75 ">
+                      <FontAwesomeIcon icon={faUserShield} size="2x" />
+                      <span className="ml-4 text-gray-200">Admin Dashbord</span>
+                    </span>{" "}
+                  </Link>
+                ) : (
+                  <></>
+                )}{" "}
                 <Link to="/play-chess">
                   <span className="menu-nav-bar hover:opacity-75 ">
                     <FontAwesomeIcon icon={faChess} size="2x" />
                     <span className="ml-4 text-gray-200">Play Chess</span>
                   </span>
                 </Link>
+                <span
+                  onClick={handleLogOut}
+                  className="menu-nav-bar hover:opacity-75 "
+                >
+                  <FontAwesomeIcon icon={faSignOutAlt} size="2x" />
+                  <span className="ml-4 text-gray-200 text-sm">LOG OUT</span>
+                </span>
                 <div className="relative">
                   {notification && notification.length > 0 ? (
                     <p className="absolute bg-red-600 justify-center rounded-full px-1 mr-4 text-white text-xs">
@@ -132,12 +142,12 @@ import { isAdminTrue, isLogin } from "../../utils";
                       <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
                     </svg>
                   </button>
-                  
+
                   {state ? (
                     <div className="absolute  right-0 mt-2 bg-white rounded-md shadow-lg overflow-hidden z-20 w-48">
                       <div className="py-2 ">
                         {notification.map((u, index) => (
-                         <Notification notifications={u} idx={index} />
+                          <Notification notifications={u} idx={index} />
                         ))}
                       </div>
                     </div>
@@ -147,13 +157,6 @@ import { isAdminTrue, isLogin } from "../../utils";
                 </div>
               </div>
             </div>
-            <span
-                  onClick={handleLogOut}
-                  className="menu-nav-bar hover:opacity-75 "
-                >
-                  <FontAwesomeIcon icon={faSignOutAlt} size="2x" />
-                  <span className="ml-4 text-gray-200 text-sm">LOG OUT</span>
-                </span>
           </div>
           <div className="-mr-2 flex lg:hidden">
             <button
@@ -211,13 +214,63 @@ import { isAdminTrue, isLogin } from "../../utils";
       >
         {() => (
           <div className="lg:hidden z-1">
-            <SideMenu userConnected={userConnected} />
+            <div class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+              <Link className="mt-2" to="/">
+                <span class="lg:inline-flex  lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                  <FontAwesomeIcon icon={faHome} />{" "}
+                  <span className="ml-4">Home</span>
+                </span>
+              </Link>
+              <Link  className="mt-2" to="/Events">
+                <span class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                  <FontAwesomeIcon icon={faCalendar} />
+                  <span className="ml-4">Events</span>
+                </span>
+              </Link>
+              <Link  className="mt-2" to="/Groups">
+                {" "}
+                <span class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                  <FontAwesomeIcon icon={faAddressBook} />
+                  <span className="ml-4">Groups</span>
+                </span>
+              </Link>
+              <Link  className="mt-2" to="/health-care">
+                <span class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                  <FontAwesomeIcon icon={faHeartbeat} />
+                  <span className="ml-4 text-gray-200">Health</span>
+                </span>{" "}
+              </Link>
+              {isAdmin ? (
+                <Link  className="mt-2" to="/admin">
+                  <span class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                    <FontAwesomeIcon icon={faUserShield} />
+                    <span className="ml-4 text-gray-200">Admin Dashbord</span>
+                  </span>{" "}
+                </Link>
+              ) : (
+                <></>
+              )}{" "}
+              <Link  className="mt-2" to="/play-chess">
+                <span class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                  <FontAwesomeIcon icon={faChess} />
+                  <span className="ml-4 text-gray-200">Play Chess</span>
+                </span>
+              </Link>
+              <a
+               className="mt-2"
+                onClick={handleLogOut}
+                class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white"
+              >
+                <FontAwesomeIcon icon={faSignOutAlt} />
+                <span className="ml-4 text-gray-200 text-sm">LOG OUT</span>
+              </a>
+            </div>
           </div>
         )}
       </Transition>
-    </nav>):(<></>)
-
-   
+    </nav>
+  ) : (
+    <></>
   );
 };
 

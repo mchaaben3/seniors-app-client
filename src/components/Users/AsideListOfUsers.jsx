@@ -35,7 +35,7 @@ const AsideListOfUsers = () => {
   }, []);
 
   return (
-    <div className="flex flex-col h-full w-60  border-black lg:border-l   border-r-0 border-t-0 bg-white">
+    <div className="flex flex-col h-full w-full lg:w-60 px-6 pt-10 pb-8 bg-white shadow-xl ring-1 ring-gray-900/5">
       <input
         onChange={handleChange}
         type="text"
@@ -49,29 +49,30 @@ const AsideListOfUsers = () => {
             obj.full_name.toLowerCase().includes(searchBar.value.toLowerCase())
           )
           .map((u) => (
-            <Link key={u._id} to={`/profile/${u._id}`}>
-              <li className="flex mb-4 items-center cursor-pointer  px-2 py-2 mt-2 text-sm font-semibold text-gray-900  rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-                <div className="relative">
-                  <div
-                    className={`w-2 h-2 rounded-full ${
-                      Number(u.status) > t ? `bg-green-500` : `bg-red-500`
-                    }  absolute bottom-0 left-6`}
-                  ></div>
-                  <img
-                    src={
-                      u.profilePicture
-                        ? u.profilePicture
-                        : u.gender === "male"
-                        ?  "https://res.cloudinary.com/dp81gikbd/image/upload/v1643798807/male_er9asw.png"
-                        :"https://res.cloudinary.com/dp81gikbd/image/upload/v1643798806/female_ffenti.png"
-                    }
-                    alt="avatar"
-                    className="object-cover w-10 h-10 mx-4 rounded-full"
-                  />
-                </div>
-                {u.full_name}
-              </li>
-            </Link>
+           u._id!==userConnected ?    <Link key={u._id} to={`/profile/${u._id}`}>
+            <li className="flex mb-4 items-center cursor-pointer  px-2 py-2 mt-2 text-sm font-semibold text-gray-900  rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+              <div className="relative">
+                <div
+                  className={`w-2 h-2 rounded-full ${
+                    Number(u.status) > t ? `bg-green-500` : `bg-red-500`
+                  }  absolute bottom-0 left-6`}
+                ></div>
+                <img
+                  src={
+                    u.profilePicture
+                      ? u.profilePicture
+                      : u.gender ==="" ? "https://res.cloudinary.com/dp81gikbd/image/upload/v1643894684/anonyme_v2cws7.png": u.gender === "male"
+                      ?  "https://res.cloudinary.com/dp81gikbd/image/upload/v1643798807/male_er9asw.png"
+                      :"https://res.cloudinary.com/dp81gikbd/image/upload/v1643798806/female_ffenti.png"
+                  }
+                  alt="avatar"
+                  className="object-cover w-10 h-10 mx-4 rounded-full"
+                />
+              </div>
+              {u.full_name}
+            </li>
+          </Link>:null
+         
           ))}
       </ul>
     </div>

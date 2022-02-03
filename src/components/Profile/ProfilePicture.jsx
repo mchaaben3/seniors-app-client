@@ -25,7 +25,7 @@ const ProfilePicture = ({ userConnected }) => {
             ? image
             : userConnected.profilePicture
             ? userConnected.profilePicture
-            : userConnected.gender === "female"
+            :  userConnected.gender ==="" ? "https://res.cloudinary.com/dp81gikbd/image/upload/v1643894684/anonyme_v2cws7.png": userConnected.gender == "female"
             ? "https://res.cloudinary.com/dp81gikbd/image/upload/v1643798806/female_ffenti.png"
             : "https://res.cloudinary.com/dp81gikbd/image/upload/v1643798807/male_er9asw.png"
         }
